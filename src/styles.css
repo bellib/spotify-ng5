@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+@import "https://fonts.googleapis.com/css?family=Raleway";
+body{
+    padding: 0 ;
+    margin: 0;
+    overflow-y:scroll;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+html {
+    line-height: 1.5;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    color: rgba(0,0,0,0.87);
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+li{
+    list-style: none ;
+}
+a{
+    text-decoration: none;
+}
+.Raleway{
+    font-family: 'Raleway', sans-serif !important;
+}

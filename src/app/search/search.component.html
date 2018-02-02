@@ -1,0 +1,8 @@
+<div class="habib-boxCOntain">
+  <li><input type="text" placeholder="Serach for artist or album title" (input)="onInput($event.target.value)" #inputVal></li>
+  <li><button (click)="onInput(inputVal.value)">search</button></li>
+</div>
+<div class="habib-result" #ielementRefd  >
+  <app-resultsearch [dataResult]="dataResult"></app-resultsearch>
+ </div>
+

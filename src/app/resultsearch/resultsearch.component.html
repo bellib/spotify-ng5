@@ -1,0 +1,70 @@
+
+<div *ngIf="dataResult;else noresult" >
+  <div class="habib-albumes-container" >
+   <div class="habBoxDinamic" (click)="displat(itme)" *ngFor="let itme of dataResult " >
+     <div class="albumesBox" [class.no-habib-image]="itme.images.length==0" [ngStyle]="{ 'background-image' : itme.images.length>0 ? 'url('+itme.images[0].url+')' : 'url(https://image.ibb.co/kzxNr6/Bitmap_2x.png),url(https://picsum.photos/300/300/?gravity=east&blur=1&random=1)' }">
+         <div *ngIf="itme.images.length>0;else noimage" class="habib-album-type"
+         [ngClass]="{ 'album'  : itme.type == 'album',
+                      'single' : itme.type == 'single' ,
+                      'single' : itme.type == 'artist' } ">
+
+         </div>
+         <ng-template #noimage>
+          <div class="noimahe" >
+            <span *ngIf="itme.type == 'album' || itme.type == 'artist' || itme.type == 'single'">View Albumes</span>
+            <span *ngIf="itme.type == 'tacks'">View Tracks</span>
+          </div>
+         </ng-template>
+
+       <div class="habib-bottom-box-describtion Raleway">{{ itme.name}}</div>
+     </div>
+   </div>
+  </div>
+  <div class="habib-add-more">
+    <button (click)="showMeMor()" class="Raleway">show me more</button>
+  </div>
+</div>
+<ng-template #noresult>
+ <div class="habib-noresult"
+ [ngClass]="{ 'is-mobile-result' : screenWidth < 780 }"><span class="Raleway">Your result will appear hrer</span></div>
+</ng-template>
+<div class="habib-result" *ngIf="clikedBox">
+  <div class="habib-sing-body">
+
+    <div class="habib-bubcont" >
+      <span (click)="hideBox()"></span>
+      <div [ngClass]="{ 'is-mobile' : screenWidth < 780 ,'is-desc' : screenWidth >= 780}"
+       class="habib-rasult-display-row" >
+       <img src="{{clikedItem.images.length>0?clikedItem.images[0].url : 'https://picsum.photos/600/300/'}}" alt="">
+       <h4 class="title Raleway">{{ clikedItem.name}}</h4>
+      </div>
+      <div class="habib-text"
+      [ngStyle]="{ height : screenWidth <= 780 ? (screenHeight - 90) + 'px' : '277px'}"
+      [ngClass]="{'is-mob' : screenWidth<=780 }">
+      <h5>Album</h5>
+        <div>
+          <img src="https://placeimg.com/85/85/music" alt="">
+          <div>
+            <h5 class="Raleway">Lorem, ipsum.</h5>
+            <span>2017</span>
+          </div>
+        </div>
+        <div>
+          <img src="https://placeimg.com/85/85/music" alt="">
+          <div>
+            <h5 class="Raleway">Lorem ipsum dolor sit amet.</h5>
+            <span>2014</span>
+          </div>
+        </div>
+        <div>
+          <img src="https://placeimg.com/85/85/music" alt="">
+          <div>
+            <h5 class="Raleway">Lorem ipsum dolor sit amet consectetur..</h5>
+            <span>2012</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+ </div>
